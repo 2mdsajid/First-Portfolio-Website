@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Timer</title>
+    <style>
+      * {
+      padding: 0;
+      margin: 0;
+      border: solid #D319BC 0px;
+      background: #000000;
+      color: #FFFFFF;
+      }
+      p {
+      display: inline;
+      font-size: 20px;
+      }
+      .main {
+      width: auto;
+      height: auto;
+      border: 0px solid black;
+      padding: 5px;
+      margin: 8px;
+      }
+      .image {
+      width: 70%;
+      height: auto;
+      }
+      img {
+      height: 100%;
+      width: 100%;
+      }
+      .boxes {
+      border: solid #E75F19 0px;
+      display: flex;
+      width: 14vw;
+      height: 11vw;
+      text-align: center;
+      margin-top: 5px;
+      font-size: 4vw;
+      }
+      .box {
+      padding: 4px;
+      margin: 1px;
+      border: solid #33354F 1px;
+      height: 100%;
+      width: 100%;
+      }
+      .box p {
+      font-size: 0.9em;
+      }
+      .box .val {
+      font-size: 1.3em;
+      font-weight: bold;
+      }
+      .twt {
+      height: 40%;
+      width: 50%;
+      }
+      @media (min-width: 600px) and (max-width: 1500px) {
+      .image {
+      height: auto;
+      width: 80%;
+      }
+      .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 20px;
+      }
+      .twt {
+      width: auto;
+      margin-top: 25px;
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main" id="box">
+    <p style="font-size: 2.5vw">Now re-visit this website after</p>
+    <br>
+    <div class="running boxes">
+      <div class="box">
+        <p class="years val"></p>
+        <p class="label">years</p>
+      </div>
+      <div class="box">
+        <p class="months val"></p>
+        <p class="label">months</p>
+      </div>
+      <div class="box">
+        <p class="days val"></p>
+        <p class="label">days</p>
+      </div>
+      <div class="box">
+        <p class="hours val"></p>
+        <p class="label">hours</p>
+      </div>
+      <div class="box">
+        <p class="minutes val"></p>
+        <p class="label">minutes</p>
+      </div>
+      <div class="box">
+        <p class="seconds val"></p>
+        <p class="label">seconds</p>
+      </div>
+    </div>
+    <br><br>
+    <p style="font-size: 2.5vw; margin-top: 25px">Until I get some of 'em unblurred..haha :)</p>
+    <br>
+    <div class="grid">
+      <div class="image">
+        <img src="photos/timer/dreams.jpg" alt="dreams" />
+      </div>
+      <div class="twt">
+        <p style="font-size: 2.5vw">(& follow me on twitter !)</p>
+        <br>
+        <blockquote class="twitter-tweet" data-theme="dark">
+          <p lang="en" dir="ltr">2030.........<br>Tough days !</p>
+          &mdash; Sajid Aalam (@ImSajidAalam) <a
+            href="https://twitter.com/ImSajidAalam/status/1315856282545348608?ref_src=twsrc%5Etfw">October 13, 2020</a>
+        </blockquote>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
+    </div>
+    <script>
+      // The data/time we want to countdown 
+      var countDownDate = new Date("Oct 13, 2030 09:10:52").getTime();
+      
+      // Run myfunc every second
+      
+      var myfunc = setInterval(function () {
+      
+        var now = new Date().getTime();
+        var timeleft = countDownDate - now;
+      
+        // Calculating the days, hours, minutes and seconds left
+        var years = Math.floor(timeleft / (1000 * 60 * 60 * 24 * 30 * 12));
+        var months = Math.floor((timeleft % (1000 * 60 * 60 * 24 * 30 * 12)) /
+          (1000 * 60 * 60 * 24 * 30));
+        var days = Math.floor((timeleft % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+      
+        // Result is output to the specific element
+        document.querySelector(".years").textContent = years
+        document.querySelector(".months").innerHTML = months
+        document.querySelector(".days").innerHTML = days
+        document.querySelector(".hours").innerHTML = hours
+        document.querySelector(".minutes").innerHTML = minutes
+        document.querySelector(".seconds").textContent = seconds
+      
+        let hex = [3, 4, 5, 8, 9, 'A', 'B', 'E', 'F']
+        function getColor() {
+          var color = '#'
+          for (i = 0; i < 6; i++) {
+            color += hex[Math.floor(Math.random() * hex.length)]
+          }
+          return color
+        }
+      
+      
+      }, 1000);
+      
+    </script>
+  </body>
+</html>

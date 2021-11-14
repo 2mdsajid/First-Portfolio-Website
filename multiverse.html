@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=q">
+  <title>Multiverse</title>
+  <script src="jquery.js" type="text/javascript" charset="utf-8"></script>
+  <style type="text/css" media="all">
+    * {}
+
+    .cont-cont {
+      width: 500px;
+      overflow-x: auto;
+      display: flex;
+      justify-content: center;
+
+    }
+
+    .cont {
+      width: 50px;
+      border: solid 0px #203581;
+
+    }
+
+    .cont-cir {
+      height: 50px;
+      width: 100%;
+      position: relative;
+      border: solid 0px #203581;
+
+    }
+
+    .line {
+      height: 105%;
+      width: 5px;
+      background: #1A1C39;
+      margin: 0 auto;
+      z-index: 0;
+    }
+
+    .cir {
+      height: 100%;
+      width: 50px;
+      border-radius: 50%;
+      background: #311A39;
+      margin: 0px auto;
+      z-index: 1;
+    }
+
+    .b {
+      border: solid 1px #203581;
+    }
+
+    .curve {
+      height: 45%;
+      width: 45%;
+      border-color: #1C1D6A;
+      border-style: solid;
+      position: absolute;
+      bottom: 0;
+    }
+
+    .out {
+      right: 0;
+      border-width: 5px 0 0 5px;
+      border-radius: 50px 0 0 0;
+    }
+
+    .in {
+      left: 0;
+      border-width: 5px 5px 0px 0px;
+      border-radius: 0px 50px 0 0px;
+    }
+
+    .out-a {
+      border-width: 5px 0px 0px 5px;
+      border-radius: 50px 0 0 0;
+      right: 0;
+    }
+
+    .out-b {
+      border-width: 0px 5px 5px 0px;
+      border-radius: 0px 0px 50px 0px;
+      top: 0px;
+      left: 0;
+    }
+
+    .in-a {
+      border-width: 5px 5px 0 0px;
+      border-radius: 0px 50px 0 0;
+      left: 0;
+    }
+
+    .in-b {
+      border-width: 0px 0px 5px 5px;
+      border-radius: 0px 0px 0px 50px;
+      right: 0px;
+      top: 0px;
+    }
+
+    .prim {
+      background: #FF151A;
+    }
+
+    .prim-b {
+      border-color: #FF151A;
+    }
+
+    .sec {
+      background: #2B15FF;
+    }
+
+    .sec-b {
+      border-color: #2B15FF;
+    }
+
+    .tert {
+      background: #15FF2B;
+    }
+
+    .tert-b {
+      border-color: #15FF2B;
+    }
+
+    img {
+      height: 100%;
+      border-radius: 50%;
+    }
+
+
+    @keyframes anim {
+      from {
+        height: 0
+      }
+
+      to {
+        height: 50px
+      }
+    }
+
+    anim {
+      animation: anim 3s;
+    }
+
+    .date {
+      position: absolute;
+      height: 15px;
+      width: 100%;
+      border: solid 1px #7B7E9B;
+      background: #0A0B1C;
+      color: #FFFFFF;
+      bottom: -17px;
+      text-align: center;
+      z-index: 8;
+      font-size: 12px;
+    }
+
+    .title {
+      height: 90%;
+      width: 90%;
+      font-size: 8px;
+      font-weight: bold;
+      border: solid 1px #192BF0;
+      position: absolute;
+      top: -9px;
+      text-align: center;
+      background: #2D347B;
+      color: #FFFFFF;
+      padding: 1px;
+    }
+
+    .intro {
+      width: 500px;
+      padding: 5px;
+      text-align: center;
+      border: solid 1px #2231D9;
+      background: #595D8B;
+      color: #FFFFFF;
+    }
+
+    .sacred p {
+      width: 500px;
+      text-align: center;
+      margin-bottom: -30px;
+      margin-right: 20px;
+      color: #FF0707;
+    }
+    
+    #test{
+      height: 50px;
+      width: 50px;
+      position: absolute;
+      border: solid #1629F7 1px;
+      right: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="intro">
+    <h1>What If....?</h1>
+    <p>I always think about WHAT IF I HAD DONE THAT INSTEAD OF THIS?<br>The given timeline splits/diverges based on some true incidents / decisions which were almost about to happen in my life</p>
+    <p>Inspired from Marvel's Loki and What If? series<br><br>Still in making so may look weird!!</p>
+  </div>
+  <div class="sacred" id="sacred">
+    <p>Sacred Timeline</p>
+  </div>
+  <div class="cont-cont">
+  </div>
+  <div id="test"></div>
+  <script src="multi.js" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

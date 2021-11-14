@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HTML</title>
+  <!-- HTML -->
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+  <script src="jquery.js" type="text/javascript" charset="utf-8"></script>
+  <style type="text/css" media="all">
+    * {
+      margin: 0;
+      padding: 0;
+      background: #000000;
+      color: #FFFFFF;
+    }
+
+    .gap {
+      height: 20px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    section {
+      width: 95vw;
+      margin: 0 auto;
+      margin-bottom: 7vh;
+      border: solid 0px #C5FF10;
+      padding-top: 7vh;
+    }
+
+    .title {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 25px;
+
+    }
+
+    .title h2 {
+      width: auto;
+      border-bottom: solid 2px #FFFFFF;
+      display: inline-block;
+      font-size: 1.5rem;
+      padding-bottom: 5px;
+    }
+
+
+    /* NAVBAR */
+    header {
+      position: sticky;
+      top: 0;
+      height: 6vh;
+      z-index: 999;
+      transition: all .4s ease-in-out;
+    }
+
+    nav {
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: solid #FFFFFF 1px;
+
+    }
+
+    .yoda {
+      height: 90%;
+      margin-left: 10px;
+    }
+
+    .tab {
+      height: 75%;
+      margin-right: 10px;
+      transition: all .3s;
+    }
+
+    ul,
+    li,
+    a {
+      background: #22232B;
+    }
+
+    ul {
+      position: fixed;
+      top: 6vh;
+      right: 0;
+      height: 94vh;
+      transition: all .2s;
+      width: 0;
+      z-index: 55;
+    }
+
+    li {
+      list-style: none;
+      text-align: center;
+      width: 40%;
+      margin: 10px auto;
+      Padding-top: 5px;
+      border-bottom: solid #FFFFFF 1px;
+    }
+
+    a {
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    .click {
+      transform: rotate(+90deg);
+    }
+
+    .hide {
+      width: 0;
+    }
+
+    .show {
+      width: 70vw;
+      border-left: 1px solid #FFFFFF;
+      border-top: 1px solid #FFFFFF;
+    }
+
+    .mode {
+      margin: 20px auto;
+      font-size: 1rem;
+      color: #FFFFFF;
+      width: 60%;
+      margin-bottom: 30px;
+      position: relative;
+      z-index: 999;
+    }
+
+    .mode div {
+      margin: 0 auto;
+      border: solid 1px #45453E;
+      padding: 0px 5px;
+    }
+
+    .m-web {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .m-terminal {
+      border-top: 0px;
+    }
+    
+    .t-mode a{
+      background: #000000;
+      font-size: 1rem;
+    }
+
+    .mode-img {
+      height: 20px;
+      transform: rotate(+180deg);
+      transition: all 0.1s;
+    }
+
+    .more {
+      margin-top: 30px;
+    }
+
+    .more,
+    .more-ii,
+    .more-img,
+    .more span {
+      background: #22232B;
+    }
+
+    .more span {
+      margin-left: 5px;
+    }
+
+    .more-img {
+      height: 20px;
+      transform: rotate(+180deg);
+      transition: all 0.1s;
+    }
+
+    .rotate-img {
+      transform: rotate(0deg);
+    }
+
+    .snap,
+    .snap img {
+      background: #22232B;
+    }
+
+    .gauntlet {
+      display: block;
+      height: 80%;
+      width: 20vw;
+      margin: 10px auto;
+      background: #22232B;
+    }
+
+
+    /* SECTION 1*/
+
+    .home p {
+      font-size: 1.6rem;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+
+    .sajid,.the_text {
+      color: #FDF923;
+    }
+
+    .astro {
+      width: 100%;
+      height: 70vh;
+      border: solid 0px #FF14A2;
+      position: relative;
+      margin-top: 30px;
+    }
+
+    .astro-img {
+      height: 200px;
+      border: solid 0px #FF14A2;
+      position: absolute;
+    }
+
+
+    /* SECTION 2 */
+
+    .about {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+    }
+
+    .about img {
+      width: 60%;
+      margin: 25px 25px;
+      border-radius: 50%;
+    }
+
+    h3 {
+      margin-bottom: 25px;
+    }
+
+    .about p {
+      width: 90%;
+      text-align: center;
+      font-size: 1rem;
+      font-weight: normal;
+    }
+
+    /* SECTION 3 */
+
+    .skills p {
+      margin-bottom: 20px;
+    }
+
+    .skill {
+      height: 50px;
+      border: solid 0px #FFF;
+      display: flex;
+      flex-direction: column;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      position: relative;
+      margin-bottom: 35px;
+      box-shadow: 0px 0px .5px .5px #9F98B8;
+    }
+
+    .skill .s {
+      height: 85%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 5px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      border-bottom: solid .5px #9376FF;
+    }
+
+    .skill .bar {
+      height: 15%;
+      background: #9376FF;
+    }
+
+    .b1 {
+      width: 29%;
+    }
+
+    .b2 {
+      width: 33%;
+    }
+
+    .b3 {
+      width: 16%;
+    }
+
+    .b4 {
+      width: 19%;
+    }
+
+    /*SECTION 5*/
+    .dreams p {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+
+    /* SECTION 6 */
+
+    input {
+      width: 95%;
+      height: 50px;
+    }
+
+    .msg {
+      height: 200px;
+      width: 95%;
+      padding-top: 10px;
+    }
+
+    input,
+    .msg {
+      margin-top: 20px;
+      border: solid 1px #FFFFFF;
+      border-radius: 10px;
+      padding-left: 10px;
+    }
+
+    .contact p {
+      margin-top: 20px;
+      width: 95%;
+      text-align: center;
+      font-size: .9rem;
+    }
+
+    /* SECTION 7 */
+
+    footer {
+      height: 200px;
+      background: #585B7D;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+
+    footer p,
+    .social,
+    .social img,
+    .social a,
+    footer h2 {
+      background: #585B7D;
+
+    }
+
+    footer p {
+      margin-top: 15px;
+      font-weight: bold;
+      font-size: .95rem;
+    }
+
+    .social {
+      height: 15%;
+    }
+
+    .social img {
+      height: 100%;
+      margin: 0 15px;
+    }
+
+    .social a {
+      text-decoration: none;
+    }
+
+    .pc {
+      display: none;
+    }
+
+    @media (min-width: 750px) and (max-width: 2600px) {
+      header {
+        display: none;
+      }
+
+      section {
+        display: none;
+      }
+
+      footer {
+        display: none;
+      }
+
+      h2,
+      h3,
+      img,
+      p,
+      .title {
+        display: none;
+      }
+
+      .pc {
+        display: block;
+        font-weight: bold;
+        font-size: 2rem;
+        width: 40%;
+        margin: 0 auto;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="nav">
+      <img class="yoda" src="photos/web/icon.jpg" alt="icon" />
+      <ul class="hide">
+        <div class="mode">
+          <div class="m-web">Web Mode <span><img class="mode-img" src="photos/web/mode-btn.jpg" alt="" /></span></div>
+          <div class="m-terminal t-mode"><a href="terminal.html">Terminal Mode</a></div>
+        </div>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#dreams">Dreams</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <div class="more">
+          <li style="font-weight: bold; border-bottom: 0px">MORE <span><img class="more-img" src="photos/web/mode-btn.jpg" alt="" /></span></li>
+          <div class="more-ii">
+            <li><a href="timeline.html">Timeline</a></li>
+            <li><a href="multiverse.html">Multiverse</a></li>
+          </div>
+        </div>
+        <div style="background: #22232B;" class="gap"></div>
+        <div class="snap">
+          <img class="gauntlet" src="photos/web/bs.jpg" alt="">
+        </div>
+      </ul>
+      <img class="tab clickback" src="photos/web/tab.jpg" alt="" />
+    </nav>
+  </header>
+  <!-- HOME  -->
+  <section class="home" id="home">
+    <div class="intro">
+      <p>Hi,</p>
+      <p>I'm <span class="sajid">Sajid</span></p>
+      <p class="animated_text">I'm not a <span class="the_text"></span><span class="aux"></span></p>
+    </div>
+    <div class="astro">
+      <a href="timer.html"><img class="astro-img" src="photos/web/astro.jpg" alt="" /></a>
+    </div>
+  </section>
+  <!-- ABOUT  -->
+  <section class="about" id="about">
+    <div class="title">
+      <h2>ABOUT</h2>
+    </div>
+    <img src="photos/web/face.jpg" alt="" />
+    <h3>I'm Sajid</h3>
+    <p>Nothing much to say about me. I'm just a young boy trying to learn and know this wonderful world. I'm passionate about the future and making it an amazing place for others.</p>
+  </section>
+  <!--  SKILLS  -->
+  <section class="skills" id="skills">
+    <div class="title">
+      <h2>SKILLS</h2>
+    </div>
+    <h3>Some Noob Skills</h3>
+    <p>I'm not really an expert in anything. Some noob skills I got.</p>
+    <div class="skill">
+      <div class="s">
+        <div class="name">Social Skills</div>
+        <div class="value">29%</div>
+      </div>
+      <div class="bar b1"></div>
+    </div>
+    <div class="skill">
+      <div class="s">
+        <div class="name">Communication Skills</div>
+        <div class="value">33%</div>
+      </div>
+      <div class="bar b2"></div>
+    </div>
+    <div class="skill">
+      <div class="s">
+        <div class="name">Friends Skills</div>
+        <div class="value">16%</div>
+      </div>
+      <div class="bar b3"></div>
+    </div>
+    <div class="skill">
+      <div class="s">
+        <div class="name">Coding</div>
+        <div class="value">19%</div>
+      </div>
+      <div class="bar b4"></div>
+    </div>
+  </section>
+  <!-- DREAMS  -->
+  <section class="dreams" id="dreams">
+    <div class="title">
+      <h2>DREAMS</h2>
+    </div>
+    <p>"Yeah. Working on Them"</p>
+  </section>
+  <!-- CONTACT  -->
+  <section class="contact" id="contact">
+    <div class="title">
+      <h2>CONTACT</h2>
+    </div>
+    <form action="" method="get" accept-charset="utf-8">
+      <input type="text" placeholder="Name" /><br>
+      <input type="text" name="" id="" value="" placeholder="Email" />
+      <textarea class="msg" name="" id=rows="8" cols="40" placeholder="Message"></textarea>
+    </form>
+    <p>( Wondering where's the submit button? LOL. There's no backend so I didn't put the button hehe )</p>
+  </section>
+  <!--  FOOTER -->
+  <footer id="footer">
+    <h2>Sajid</h2>
+    <div class="social">
+      <a href="https://www.instagram.com/2mdsajid/"><img src="photos/web/ig.jpg" alt="" /></a>
+      <a href="https://mobile.twitter.com/ImSajidAalam"><img src="photos/web/twitter.jpg" alt="" /></a>
+      <a href="https://github.com/2mdsajid"><img src="photos/web/github.jpg" alt="" /></a>
+    </div>
+    <p>© 2021 but no rights reserved </p>
+  </footer>
+  <p class="pc">Oopss! the website isn't available in PC/Laptop. Sorry LOL !<br><br>( but you can reduce your browser width to view the website )</p>
+  <script src="main.js"></script>
+  <script type="text/javascript" charset="utf-8">
+  </script>
+</body>
+
+</html>
